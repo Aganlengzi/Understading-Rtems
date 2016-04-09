@@ -28,7 +28,7 @@ _Watchdog_Adjust：根据指定的方向和间隔值更新指定的链表，
 ###//核心抽象层TOD
 提供了对时间的基本支持，主要完成了对系统启动后时间的更新维护，
 ```
-epos_initialize_data_structures
+rtems_initialize_data_structures
 {
      _TOD_Handler_initialization
      {
@@ -40,7 +40,7 @@ epos_initialize_data_structures
 ```
 ####//TOD操作
 ```
-epos_clock_set             //由用户程序调用设置
+rtems_clock_set             //由用户程序调用设置
 {
      _TOD_Set
      {
@@ -58,7 +58,7 @@ _TOD_Tickle_ticks     //就是下面讲到的在时钟中断到来的时候TOD�
 {
      Clock_isr
      {
-          epos_clock_tick
+          rtems_clock_tick
           {
                 _TOD_Tickle_ticks();
                 {
