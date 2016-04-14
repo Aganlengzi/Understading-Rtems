@@ -75,6 +75,7 @@ rtems_region_get_segment
 _Objects_Close和 _Region_Free（最终是调用_Objects_Free）函数完成从系统的对象管理中删除相关的信息和释放相应的内存
 
  rtems_region_extend：扩展段长可变的区域
+实际是调用_Heap_Extend完成region的扩展工作的
  rtems_region_ident：得到与给定区域名对应的 ID
  rtems_region_get_information：得到给定区域的信息
  rtems_region_get_free_information：得到区域中空闲块的信息
